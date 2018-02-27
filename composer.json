@@ -1,0 +1,33 @@
+{
+  "name": "phproberto/joomla-model",
+  "description": "Base models for Joomla!",
+  "license": "GPL-2.0",
+  "authors": [
+      {
+          "name": "Roberto Segura López",
+          "email": "roberto@phproberto.com",
+          "homepage": "http://www.phproberto.com"
+      }
+  ],
+  "require": {
+    "php": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phproberto\\Joomla\\Model\\": "extensions/libraries/phproberto_model/src/"
+    }
+  },
+  "autoload-dev": {
+      "psr-4": {
+          "Phproberto\\Joomla\\Model\\Tests\\": "tests/"
+      }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.35",
+    "joomla/coding-standards": "~2.0@alpha",
+    "squizlabs/php_codesniffer": "^2.8"
+  },
+  "scripts": {
+    "test" : "./vendor/bin/phpunit"
+  }
+}

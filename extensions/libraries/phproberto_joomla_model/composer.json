@@ -1,0 +1,23 @@
+{
+    "name": "phproberto/joomla-model",
+    "type": "library",
+    "description": "Base models for Joomla!",
+    "keywords": ["joomla", "model"],
+    "homepage": "https://github.com/phproberto/joomla-model",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Roberto Segura",
+            "email": "roberto@phproberto.com",
+            "homepage": "http://www.phproberto.com"
+        }
+    ],
+    "require"    : {
+        "php": ">=5.3.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phproberto\\Joomla\\Model\\": "src/"
+        }
+    }
+}
