@@ -11,7 +11,6 @@ namespace Phproberto\Joomla\Model\Tests\Unit\State\Filter;
 
 defined('_JEXEC') || die;
 
-use PHPUnit\Framework\TestCase;
 use Phproberto\Joomla\Model\State\Filter\DateRangeFilter;
 
 /**
@@ -19,7 +18,7 @@ use Phproberto\Joomla\Model\State\Filter\DateRangeFilter;
  *
  * @since   __DEPLOY_VERSION__
  */
-class DateRangeFilterTest extends TestCase
+class DateRangeFilterTest extends \TestCaseDatabase
 {
 	/**
 	 * Data provider for data.

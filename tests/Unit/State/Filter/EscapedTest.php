@@ -11,7 +11,6 @@ namespace Phproberto\Joomla\Model\Tests\Unit\State\Filter;
 
 defined('_JEXEC') || die;
 
-use PHPUnit\Framework\TestCase;
 use Phproberto\Joomla\Model\State\Filter\Escaped;
 
 /**
@@ -19,7 +18,7 @@ use Phproberto\Joomla\Model\State\Filter\Escaped;
  *
  * @since   __DEPLOY_VERSION__
  */
-class EscapedTest extends TestCase
+class EscapedTest extends \TestCaseDatabase
 {
 	/**
 	 * Data provider for data.
@@ -29,8 +28,8 @@ class EscapedTest extends TestCase
 	public function filterTestData() : array
 	{
 		return [
-			["'s Hertogenbosch", ["\'s Hertogenbosch"]],
-			['\sample string', ['\\\\sample string']],
+			["'s Hertogenbosch", ["''s Hertogenbosch"]],
+			['\sample string', ['\\sample string']],
 			[[0], ['0']],
 			[[false, true], []],
 			[['', ' ', null], []],

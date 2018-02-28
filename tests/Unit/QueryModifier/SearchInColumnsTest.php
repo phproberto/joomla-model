@@ -19,7 +19,7 @@ use Phproberto\Joomla\Model\QueryModifier\SearchInColumns;
  *
  * @since   __DEPLOY_VERSION__
  */
-class SearchInColumnsTest extends \TestCase
+class SearchInColumnsTest extends \TestCaseDatabase
 {
 	private $callbackExecuted = false;
 

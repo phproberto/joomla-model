@@ -12,7 +12,6 @@ namespace Phproberto\Joomla\Model\Tests\Unit\State;
 defined('_JEXEC') || die;
 
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
-use PHPUnit\Framework\TestCase;
 use Phproberto\Joomla\Model\State\Filter;
 use Phproberto\Joomla\Model\State\FilteredState;
 use Phproberto\Joomla\Model\State\FilteredProperty;
@@ -24,7 +23,7 @@ use Phproberto\Joomla\Model\State\PropertyInterface;
  *
  * @since   __DEPLOY_VERSION__
  */
-class FilteredStateTest extends TestCase
+class FilteredStateTest extends \TestCaseDatabase
 {
 	/**
 	 * @test
