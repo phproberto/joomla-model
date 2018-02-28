@@ -49,6 +49,10 @@ abstract class ListModel extends BaseListModel implements ModelWithStateInterfac
 			'list.limit' => new FilteredProperty(
 				new PopulableProperty('list.limit'),
 				new Filter\Integer
+			),
+			'list.start' => new FilteredProperty(
+				new PopulableProperty('list.start'),
+				new Filter\Integer
 			)
 		];
 	}
