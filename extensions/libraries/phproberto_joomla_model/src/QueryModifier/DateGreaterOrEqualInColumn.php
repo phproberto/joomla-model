@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\QueryModifier;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 /**
  * Modifier to select all rows with values are in a specified list of values.

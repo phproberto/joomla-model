@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\Traits;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 use Phproberto\Joomla\Model\QueryModifier\QueryModifierInterface;
 

@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\State\Filter;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 /**
  * Boolean values filterer.

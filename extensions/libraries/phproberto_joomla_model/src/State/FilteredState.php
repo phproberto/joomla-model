@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\State;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use Phproberto\Joomla\Model\State\Filter\StringQuoted;

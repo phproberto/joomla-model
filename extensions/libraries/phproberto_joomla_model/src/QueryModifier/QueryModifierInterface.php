@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\QueryModifier;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 /**
  * Represents a query modifier.

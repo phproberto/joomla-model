@@ -9,7 +9,7 @@
 
 namespace Phproberto\Joomla\Model\State;
 
-defined('_JEXEC') or die;
+defined('_JEXEC') || die;
 
 /**
  * Methods required by query filterers.
