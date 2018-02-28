@@ -4,11 +4,11 @@
 git clone https://github.com/joomla/joomla-cms.git /tmp/joomla-cms
 composer install -d /tmp/joomla-cms
 
-# Install joomla-twig testing composer dependencies
+# Install joomla-model testing composer dependencies
 composer install --prefer-dist --no-interaction --no-progress
 
-# Install joomla-twig library composer dependencies
-composer install -d ./extensions/libraries/twig
+# Install joomla-model library composer dependencies
+composer install -d ./extensions/libraries/phproberto_joomla_model
 
 # Copy CI gulp config (with cloned joomla path) to the build folder
 cp ./ci/gulp-config.ci.json ./build/gulp-config.json
