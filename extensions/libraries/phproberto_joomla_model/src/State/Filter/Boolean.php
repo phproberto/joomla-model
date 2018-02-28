@@ -41,21 +41,11 @@ class Boolean extends BaseFilter
 	{
 		$value = parent::prepareValue($value);
 
-		if ('true' === $value)
-		{
-			return true;
-		}
-
-		if ('false' === $value)
-		{
-			return false;
-		}
-
-		if (!in_array($value, [1,0,'1','0', true,false], true))
+		if (!in_array($value, [1, 0,'1', '0', true, false, 'true', 'false'], true))
 		{
 			return null;
 		}
 
-		return (bool) $value;
+		return 'true' === $value ? true : ('false' === $value ? false : (bool) $value);
 	}
 }
