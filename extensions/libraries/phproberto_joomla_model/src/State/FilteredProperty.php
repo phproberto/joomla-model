@@ -63,6 +63,8 @@ class FilteredProperty implements PropertyInterface
 	/**
 	 * Filter a value for this property.
 	 *
+	 * @param   mixed  $value  Value to filter
+	 *
 	 * @return  mixed
 	 */
 	public function filter($value)
