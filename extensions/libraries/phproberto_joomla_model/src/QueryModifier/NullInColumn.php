@@ -26,13 +26,6 @@ class NullInColumn extends BaseQueryModifier implements QueryModifierInterface
 	protected $column;
 
 	/**
-	 * Callback to execute if there are values found.
-	 *
-	 * @var  callable|null
-	 */
-	protected $callback;
-
-	/**
 	 * Constructor.
 	 *
 	 * @param   \JDatabaseQuery  $query     Query to modify
@@ -41,10 +34,9 @@ class NullInColumn extends BaseQueryModifier implements QueryModifierInterface
 	 */
 	public function __construct(\JDatabaseQuery$query, string $column, callable $callback = null)
 	{
-		parent::__construct($query);
+		parent::__construct($query, $callback);
 
-		$this->column   = $column;
-		$this->callback = $callback;
+		$this->column = $column;
 	}
 
 	/**
@@ -54,10 +46,7 @@ class NullInColumn extends BaseQueryModifier implements QueryModifierInterface
 	 */
 	public function apply()
 	{
-		if ($this->callback)
-		{
-			call_user_func_array($this->callback, array($this->query));
-		}
+		$this->callback();
 
 		$db = $this->getDbo();
 

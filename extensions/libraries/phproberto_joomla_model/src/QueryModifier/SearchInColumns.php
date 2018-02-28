@@ -33,13 +33,6 @@ class SearchInColumns extends BaseQueryModifier implements QueryModifierInterfac
 	protected $columns;
 
 	/**
-	 * Callback to execute if there are values found.
-	 *
-	 * @var  callable|null
-	 */
-	protected $callback;
-
-	/**
 	 * Constructor.
 	 *
 	 * @param   \JDatabaseQuery  $query     Query to modify
@@ -49,11 +42,10 @@ class SearchInColumns extends BaseQueryModifier implements QueryModifierInterfac
 	 */
 	public function __construct(\JDatabaseQuery$query, array $values, array $columns, callable $callback = null)
 	{
-		parent::__construct($query);
+		parent::__construct($query, $callback);
 
 		$this->values   = $values;
 		$this->columns  = $columns;
-		$this->callback = $callback;
 	}
 
 	/**
@@ -68,10 +60,7 @@ class SearchInColumns extends BaseQueryModifier implements QueryModifierInterfac
 			return;
 		}
 
-		if ($this->callback)
-		{
-			call_user_func_array($this->callback, array($this->query));
-		}
+		$this->callback();
 
 		$db = $this->getDbo();
 

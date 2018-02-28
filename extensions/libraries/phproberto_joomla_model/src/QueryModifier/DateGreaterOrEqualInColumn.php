@@ -33,13 +33,6 @@ class DateGreaterOrEqualInColumn extends BaseQueryModifier implements QueryModif
 	protected $column;
 
 	/**
-	 * Callback to execute if there are values found.
-	 *
-	 * @var  callable|null
-	 */
-	protected $callback;
-
-	/**
 	 * Constructor.
 	 *
 	 * @param   \JDatabaseQuery  $query     Query to modify
@@ -49,11 +42,10 @@ class DateGreaterOrEqualInColumn extends BaseQueryModifier implements QueryModif
 	 */
 	public function __construct(\JDatabaseQuery$query, array $values, string $column, callable $callback = null)
 	{
-		parent::__construct($query);
+		parent::__construct($query, $callback);
 
 		$this->values   = $values;
 		$this->column   = $column;
-		$this->callback = $callback;
 	}
 
 	/**
@@ -68,10 +60,7 @@ class DateGreaterOrEqualInColumn extends BaseQueryModifier implements QueryModif
 			return;
 		}
 
-		if ($this->callback)
-		{
-			call_user_func_array($this->callback, array($this->query));
-		}
+		$this->callback();
 
 		$db = $this->getDbo();
 

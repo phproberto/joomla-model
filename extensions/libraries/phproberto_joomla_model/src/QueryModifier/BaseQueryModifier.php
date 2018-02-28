@@ -21,6 +21,13 @@ use Joomla\CMS\Factory;
 abstract class BaseQueryModifier
 {
 	/**
+	 * Callback to execute if there are values found.
+	 *
+	 * @var  callable|null
+	 */
+	protected $callback;
+
+	/**
 	 * Query to modify.
 	 *
 	 * @var  \JDatabaseQuery\
@@ -30,11 +37,26 @@ abstract class BaseQueryModifier
 	/**
 	 * Constructor.
 	 *
-	 * @param   \JDatabaseQuery  $query  Query to modify
+	 * @param   \JDatabaseQuery  $query     Query to modify
+	 * @param   callable|null    $callback  Callback to execute if there are values found.
 	 */
-	public function __construct(\JDatabaseQuery$query)
+	public function __construct(\JDatabaseQuery$query, callable $callback = null)
 	{
+		$this->callback = $callback;
 		$this->query = $query;
+	}
+
+	/**
+	 * Execute the callback.
+	 *
+	 * @return  void
+	 */
+	protected function callback()
+	{
+		if ($this->callback)
+		{
+			call_user_func_array($this->callback, array($this->query));
+		}
 	}
 
 	/**
