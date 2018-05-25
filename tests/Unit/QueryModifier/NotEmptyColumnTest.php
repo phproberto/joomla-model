@@ -12,7 +12,6 @@ namespace Phproberto\Joomla\Model\Tests\Unit;
 defined('_JEXEC') || die;
 
 use Joomla\CMS\Factory;
-use PHPUnit\Framework\TestCase;
 use Phproberto\Joomla\Model\QueryModifier\NotEmptyColumn;
 
 /**
@@ -20,7 +19,7 @@ use Phproberto\Joomla\Model\QueryModifier\NotEmptyColumn;
  *
  * @since   __DEPLOY_VERSION__
  */
-class NotEmptyColumnTest extends TestCase
+class NotEmptyColumnTest extends \TestCaseDatabase
 {
 	/**
 	 * @test
